@@ -34,7 +34,7 @@ app.get('/db', function(request, response) {
       if (err)
         { console.error(err); respone.send("Error " + err); }
       else
-	  { response.render('pages/db', {results: result.rows}; }
+        { response.render('pages/db', {results: result.rows} ); }
     });
   });
 });
