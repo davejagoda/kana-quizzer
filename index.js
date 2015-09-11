@@ -1,5 +1,6 @@
 var pg = require('pg');
 var cool = require('cool-ascii-faces');
+var kana = require('kana');
 var express = require('express');
 var app = express();
 
@@ -37,6 +38,10 @@ app.get('/db', function(request, response) {
         { response.render('pages/db', {results: result.rows} ); }
     });
   });
+});
+
+app.get('/kana', function(request, response) {
+  response.send(kana());
 });
 
 app.listen(app.get('port'), function() {
