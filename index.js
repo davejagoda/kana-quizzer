@@ -1,6 +1,6 @@
 var pg = require('pg');
 var cool = require('cool-ascii-faces');
-var kana = require('kana');
+var kana = require('./kana');
 var express = require('express');
 var app = express();
 
