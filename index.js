@@ -2,9 +2,13 @@ var pg = require('pg');
 var cool = require('cool-ascii-faces');
 var kana = require('./kana');
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 
@@ -44,8 +48,11 @@ app.get('/kana', function(request, response) {
   response.send(kana());
 });
 
+app.post('/kana', function(request, response) {
+  console.log(request.body.userinput);
+  response.send('You sent this body "' + request.body.userinput + '".');
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-
-
