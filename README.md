@@ -34,3 +34,10 @@ For more information about using Node.js on Heroku, see these Dev Center article
 - [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
 - [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
 - [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+
+# dj notes
+
+Resources I found useful while customizing this:
+
+- [Extracting Express POST API data](http://hawkee.com/snippet/10141/)
+- [how i can send data from html form to node.js function](http://stackoverflow.com/questions/15568851/how-i-can-send-data-from-html-form-to-node-js-function)
