@@ -57,3 +57,22 @@ module.exports = function() {
 }
 
 module.exports.kana = kana
+
+module.exports.kanaMatched = function (s1, s2, lol) {
+  if (s1 === s2) {
+    return(false);
+  }
+  var s1pos = -1;
+  var s2pos = -2;
+  for (var i = 0; i < lol.length; i++) {
+    for (var j = 0; j < lol[i].length; j++) {
+      if (s1.toUpperCase() === lol[i][j]) {
+        s1pos = i;
+      }
+      if (s2.toUpperCase() === lol[i][j]) {
+        s2pos = i;
+      }
+    }
+  }
+  return(s1pos === s2pos);
+}
