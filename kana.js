@@ -66,10 +66,10 @@ module.exports.kanaMatched = function (s1, s2, lol) {
   var s2pos = -2;
   for (var i = 0; i < lol.length; i++) {
     for (var j = 0; j < lol[i].length; j++) {
-      if (s1.toUpperCase() === lol[i][j]) {
+      if (s1.toUpperCase().trim() === lol[i][j].trim()) {
         s1pos = i;
       }
-      if (s2.toUpperCase() === lol[i][j]) {
+      if (s2.toUpperCase().trim() === lol[i][j].trim()) {
         s2pos = i;
       }
     }
