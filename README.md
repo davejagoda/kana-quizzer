@@ -1,4 +1,6 @@
-# node-js-getting-started
+# https://kana-quizzer.herokuapp.com/kana
+
+(based on Heroku's node-js-getting-started)
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
 
@@ -37,7 +39,18 @@ For more information about using Node.js on Heroku, see these Dev Center article
 
 # dj notes
 
-Resources I found useful while customizing this:
+## Resources I found useful while customizing this:
 
 - [Extracting Express POST API data](http://hawkee.com/snippet/10141/)
 - [how i can send data from html form to node.js function](http://stackoverflow.com/questions/15568851/how-i-can-send-data-from-html-form-to-node-js-function)
+
+## History of this project
+
+- cloned the Heroku sample app
+- started modifying it
+- renamed it on heroku: `heroku apps:rename kana-quizzer`
+- turned on PaperTrail's permanent log archiving: https://papertrailapp.com/account/archives
+- had Github make it a standalone repo instead of a fork
+- renamed repo from node-js-getting-started to node-js-kana-quizzer from github
+- renamed repo from command line: `mv -i node-js-getting-started node-js-kana-quizzer`
+- fixed up remotes from command line: `git remote set-url origin git@github.com:davejagoda/node-js-kana-quizzer.git`
