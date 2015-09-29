@@ -48,9 +48,10 @@ For more information about using Node.js on Heroku, see these Dev Center article
 
 - cloned the Heroku sample app
 - started modifying it
-- renamed it on heroku: `heroku apps:rename kana-quizzer`
+- renamed it on heroku (only on first machine): `heroku apps:rename kana-quizzer`
 - turned on PaperTrail's permanent log archiving: https://papertrailapp.com/account/archives
 - had Github make it a standalone repo instead of a fork
-- renamed repo from node-js-getting-started to node-js-kana-quizzer from github
+- renamed repo from node-js-getting-started to node-js-kana-quizzer from github web UI
 - renamed repo from command line: `mv -i node-js-getting-started node-js-kana-quizzer`
 - fixed up remotes from command line: `git remote set-url origin git@github.com:davejagoda/node-js-kana-quizzer.git`
+- renamed heroku git remote (only on 2nd and subsequent machines): `heroku git:remote -a kana-quizzer`
