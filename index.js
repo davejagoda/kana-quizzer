@@ -32,7 +32,7 @@ app.get('/db', function(request, response) {
 });
 
 app.get('/kana', function(request, response) {
-  var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n</head>\n<body>\n<h1>';
+  var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n<meta name="viewport" content="width = device-width" />\n</head>\n<body>\n<h1>';
 //var postamble = '</h1>\n<form method="post">\n<input type="text" name="userinput">\n<input type="submit">\n</form>\n</body>\n</html>';
   var midamble = '</h1>\n<form method="post">\n<input type="text" name="userinput">\n<input type="hidden" name="genkana" value="';
   var postamble = '">\n<input type="submit" value="Check your answer">\n</form>\n</body>\n</html>';
@@ -47,7 +47,7 @@ app.post('/kana', function(request, response) {
 	//  console.log(request.body.genkana);
 	//  response.send('You sent this body "' + request.body.userinput + '". This was hidden "' + request.body.genkana + '".');
   console.log(kana.kanaMatched(request.body.userinput, request.body.genkana, kana.kana));
-  var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n</head>\n<body>\n<h1>';
+  var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n<meta name="viewport" content="width = device-width" />\n</head>\n<body>\n<h1>';
   //  var postamble = '</h1>\n<a href="/kana">Next</a>\n</body>\n</html>';
   var postamble = '</h1>\n<form method="get">\n<next="/kana">\n<input type="submit" value="Next">\n</form>\n</body>\n</html>';
   var midamble;
