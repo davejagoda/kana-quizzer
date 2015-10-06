@@ -1,5 +1,4 @@
 var pg = require('pg');
-var cool = require('cool-ascii-faces');
 var kana = require('./kana');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -18,18 +17,6 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
   response.render('pages/index');
-});
-
-app.get('/cool', function(request, response) {
-  response.send(cool());
-});
-
-app.get('/times', function(request, response) {
-  var result = '';
-  var times = process.env.TIMES || 2;
-  for (i=0; i < times; i++)
-    result += cool();
-  response.send(result);
 });
 
 app.get('/db', function(request, response) {
