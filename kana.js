@@ -48,7 +48,7 @@ var kana = [
 ];
 
 var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n<meta name="viewport" content="width = device-width" />\n</head>\n<body>\n<h1>';
-var postamble = '</h1>\n<form method="post">\n<input type="text" name="userinput">\n<input type="submit">\n</form>\n</body>\n</html>';
+var postamble = '</h1>\n<form method="post">\n<input type="text" name="userinput" autocomplete="off">\n<input type="submit">\n</form>\n</body>\n</html>';
 
 module.exports = function() {
     return(preamble +  kana[Math.floor(Math.random() * kana.length)] + postamble)
