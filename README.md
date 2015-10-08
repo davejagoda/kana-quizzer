@@ -43,6 +43,7 @@ For more information about using Node.js on Heroku, see these Dev Center article
 
 - [Extracting Express POST API data](http://hawkee.com/snippet/10141/)
 - [how i can send data from html form to node.js function](http://stackoverflow.com/questions/15568851/how-i-can-send-data-from-html-form-to-node-js-function)
+- [TypeError: Cannot call method 'query' of null](http://stackoverflow.com/questions/24224142/typeerror-cannot-call-method-query-of-null-when-calling-pg-connect-with-her)
 
 ## History of this project
 
@@ -55,3 +56,4 @@ For more information about using Node.js on Heroku, see these Dev Center article
 - renamed repo from command line: `mv -i node-js-getting-started node-js-kana-quizzer`
 - fixed up remotes from command line: `git remote set-url origin git@github.com:davejagoda/node-js-kana-quizzer.git`
 - renamed heroku git remote (only on 2nd and subsequent machines): `heroku git:remote -a kana-quizzer`
+- appended "?ssl=true" to DATABASE_URL to allow connnecting to Heroku database
