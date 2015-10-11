@@ -57,3 +57,4 @@ For more information about using Node.js on Heroku, see these Dev Center article
 - fixed up remotes from command line: `git remote set-url origin git@github.com:davejagoda/node-js-kana-quizzer.git`
 - renamed heroku git remote (only on 2nd and subsequent machines): `heroku git:remote -a kana-quizzer`
 - appended `?ssl=true` to `DATABASE_URL` to allow connnecting to remote Heroku database
+- kana-quizzer::DATABASE=> create table users (username text, password text);
