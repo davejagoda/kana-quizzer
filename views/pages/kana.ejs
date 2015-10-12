@@ -5,11 +5,12 @@
 </head>
 <body>
   <h1>
-    <% choice %>
-    <form method="post">
-      <input type="text" name="userinput" autocomplete="off">
-      <input type="submit">
-    </form>
+    <%= choice %>
   </h1>
+  <form method="post">
+    <input type="text" name="userinput" autocomplete="off">
+    <input type="hidden" name="genkana" value="<%= choice %>">
+    <input type="submit" value="Check your answer">
+  </form>
 </body>
 </html>

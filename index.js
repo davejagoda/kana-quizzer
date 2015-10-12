@@ -32,8 +32,9 @@ app.get('/db', function(request, response) {
 });
 
 app.get('/kana', function(request, response) {
-    var choice = Math.floor(Math.random() * kana.kana.length);
-    response.render('pages/kana', {choice: choice} );
+  var choice = kana.kana[Math.floor(Math.random() * kana.kana.length)][Math.floor(Math.random() * 2 + 1)];
+  console.log('choice:' + choice);
+  response.render('pages/kana', {choice: choice} );
 //  var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n<meta name="viewport" content="width = device-width" />\n</head>\n<body>\n<h1>';
 //var postamble = '</h1>\n<form method="post">\n<input type="text" name="userinput">\n<input type="submit">\n</form>\n</body>\n</html>';
 //  var midamble = '</h1>\n<form method="post">\n<input type="text" name="userinput" autocomplete="off">\n<input type="hidden" name="genkana" value="';
@@ -45,9 +46,9 @@ app.get('/kana', function(request, response) {
 });
 
 app.post('/kana', function(request, response) {
-	//  console.log(request.body.userinput);
-	//  console.log(request.body.genkana);
-	//  response.send('You sent this body "' + request.body.userinput + '". This was hidden "' + request.body.genkana + '".');
+  console.log(request.body.userinput);
+  console.log(request.body.genkana);
+  //  response.send('You sent this body "' + request.body.userinput + '". This was hidden "' + request.body.genkana + '".');
   console.log(kana.kanaMatched(request.body.userinput, request.body.genkana, kana.kana));
   var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n<meta name="viewport" content="width = device-width" />\n</head>\n<body>\n<h1>';
   //  var postamble = '</h1>\n<a href="/kana">Next</a>\n</body>\n</html>';
