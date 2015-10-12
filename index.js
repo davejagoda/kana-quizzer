@@ -32,13 +32,15 @@ app.get('/db', function(request, response) {
 });
 
 app.get('/kana', function(request, response) {
-  var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n<meta name="viewport" content="width = device-width" />\n</head>\n<body>\n<h1>';
+    var choice = Math.floor(Math.random() * kana.kana.length);
+    response.render('pages/kana', {choice: choice} );
+//  var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n<meta name="viewport" content="width = device-width" />\n</head>\n<body>\n<h1>';
 //var postamble = '</h1>\n<form method="post">\n<input type="text" name="userinput">\n<input type="submit">\n</form>\n</body>\n</html>';
-  var midamble = '</h1>\n<form method="post">\n<input type="text" name="userinput" autocomplete="off">\n<input type="hidden" name="genkana" value="';
-  var postamble = '">\n<input type="submit" value="Check your answer">\n</form>\n</body>\n</html>';
-  var choice = Math.floor(Math.random() * kana.kana.length);
-  var syllabary = Math.floor(Math.random() * 2 + 1);
-  response.send(preamble + kana.kana[choice][syllabary] + midamble + kana.kana[choice][syllabary] + postamble)
+//  var midamble = '</h1>\n<form method="post">\n<input type="text" name="userinput" autocomplete="off">\n<input type="hidden" name="genkana" value="';
+//  var postamble = '">\n<input type="submit" value="Check your answer">\n</form>\n</body>\n</html>';
+//  var choice = Math.floor(Math.random() * kana.kana.length);
+//  var syllabary = Math.floor(Math.random() * 2 + 1);
+//  response.send(preamble + kana.kana[choice][syllabary] + midamble + kana.kana[choice][syllabary] + postamble)
 //kana.kana[choice][syllabary] + ':' + choice + ':' + syllabary);
 });
 
