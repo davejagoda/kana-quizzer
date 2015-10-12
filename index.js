@@ -32,34 +32,18 @@ app.get('/db', function(request, response) {
 });
 
 app.get('/kana', function(request, response) {
+// the choice of kana is a combination of a specific row (the a i u e o order)
+// and a syllabary (hiragana or katakana)
   var choice = kana.kana[Math.floor(Math.random() * kana.kana.length)][Math.floor(Math.random() * 2 + 1)];
   console.log('choice:' + choice);
-  response.render('pages/kana', {choice: choice} );
-//  var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n<meta name="viewport" content="width = device-width" />\n</head>\n<body>\n<h1>';
-//var postamble = '</h1>\n<form method="post">\n<input type="text" name="userinput">\n<input type="submit">\n</form>\n</body>\n</html>';
-//  var midamble = '</h1>\n<form method="post">\n<input type="text" name="userinput" autocomplete="off">\n<input type="hidden" name="genkana" value="';
-//  var postamble = '">\n<input type="submit" value="Check your answer">\n</form>\n</body>\n</html>';
-//  var choice = Math.floor(Math.random() * kana.kana.length);
-//  var syllabary = Math.floor(Math.random() * 2 + 1);
-//  response.send(preamble + kana.kana[choice][syllabary] + midamble + kana.kana[choice][syllabary] + postamble)
-//kana.kana[choice][syllabary] + ':' + choice + ':' + syllabary);
+  response.render('pages/kana_get', {choice: choice} );
 });
 
 app.post('/kana', function(request, response) {
-  console.log(request.body.userinput);
-  console.log(request.body.genkana);
-  //  response.send('You sent this body "' + request.body.userinput + '". This was hidden "' + request.body.genkana + '".');
-  console.log(kana.kanaMatched(request.body.userinput, request.body.genkana, kana.kana));
-  var preamble = '<!doctype html>\n<html>\n<head>\n<title>kana</title>\n<meta charset="utf-8" />\n<meta name="viewport" content="width = device-width" />\n</head>\n<body>\n<h1>';
-  //  var postamble = '</h1>\n<a href="/kana">Next</a>\n</body>\n</html>';
-  var postamble = '</h1>\n<form method="get">\n<next="/kana">\n<input type="submit" value="Next">\n</form>\n</body>\n</html>';
-  var midamble;
-  if (kana.kanaMatched(request.body.userinput, request.body.genkana, kana.kana)) {
-    midamble = 'Correct!';
-  } else {
-    midamble = 'Wrong!';
-  }
-  response.send(preamble + midamble + postamble);
+  console.log('userinput: ' + request.body.userinput);
+  console.log('genkana: ' + request.body.genkana);
+  console.log('userinput === genkana? ' + kana.kanaMatched(request.body.userinput, request.body.genkana, kana.kana));
+  response.render('pages/kana_post', {correct: kana.kanaMatched(request.body.userinput, request.body.genkana, kana.kana) } );
 });
 
 app.listen(app.get('port'), function() {
